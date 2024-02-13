@@ -1,6 +1,4 @@
-﻿using DesignPartterns.Builder;
-
-namespace DesignPartterns.SimpleFactory
+﻿namespace DesignPartterns.SimpleFactory
 {
     public class Loja
     {
@@ -8,13 +6,16 @@ namespace DesignPartterns.SimpleFactory
         {
             Console.WriteLine("======= Staff Code =======\n");
 
+            Console.WriteLine("Qual seu nome ?");
+            var nome = Console.ReadLine();
+
             var opcoes = new List<string> { "H - Hamburguer", "P - Pizza", "S - Salgados", "PF - Prato Freito" };
-            Console.WriteLine("Qual o seu pedido ?\n" + string.Join("\n", opcoes));
+            Console.WriteLine($"Qual o seu pedido {nome} ?\n" + string.Join("\n", opcoes));
 
             var lancheSelecionado = Console.ReadLine();
             try
             {
-                Lanche lanche = LojaService.CriarLanche(lancheSelecionado);
+                Lanche lanche = LojaService.CriarLanche(lancheSelecionado, nome);
 
                 lanche.PrepararPedido();
                 lanche.EmbalarPedido();

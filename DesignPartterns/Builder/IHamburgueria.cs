@@ -2,7 +2,7 @@
 {
     public interface IHamburgueria
     {
-        void Montar();
+        void Montar(string nome);
         Hamburguer Obter();
     }
 }

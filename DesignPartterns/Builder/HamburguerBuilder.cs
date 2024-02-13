@@ -7,7 +7,7 @@
         public void Criar() => hamburguer = new Hamburguer();
         public Hamburguer Obter() => hamburguer;
 
-        public abstract void ReceberPedido();
+        public abstract void ReceberPedido(string nome);
         public abstract void PedidoRecebido();
     }
 }

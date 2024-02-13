@@ -1,4 +1,5 @@
-﻿using DesignPartterns.SimpleFactory;
+﻿using DesignPartterns.Prototype;
+using DesignPartterns.SimpleFactory;
 
 namespace DesignPartterns.Builder
 {
@@ -22,8 +23,9 @@ namespace DesignPartterns.Builder
 
     public class HamburguerArtesanal : HamburguerBuilder
     {
-        public override void ReceberPedido()
+        public override void ReceberPedido(string nome)
         {
+            hamburguer.Cliente = new Cliente { Nome = nome };
             hamburguer.Nome = "Hamburguer Artesanal";
             hamburguer.Pao = "Australiano";
             hamburguer.Carne = "180g - Picanha";

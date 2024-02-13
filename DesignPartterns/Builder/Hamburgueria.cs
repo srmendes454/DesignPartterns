@@ -7,10 +7,10 @@
         {
             _builder = builder;
         }
-        public void Montar()
+        public void Montar(string nome)
         {
             _builder.Criar();
-            _builder.ReceberPedido();
+            _builder.ReceberPedido(nome);
         }
 
         public Hamburguer Obter() => _builder.Obter();
